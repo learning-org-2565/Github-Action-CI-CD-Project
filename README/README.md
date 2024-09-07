@@ -1,0 +1,1 @@
+I'm going to build Github Actions project which will simpley the testing, deployments of app code
