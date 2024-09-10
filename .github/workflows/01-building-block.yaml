@@ -17,7 +17,7 @@ jobs:
             - name: 3rd step
               run: |
                  echo "this is secound job and 3rd step"
-                 exit 1
+                 exit 0
             - name: 4th step
               run: echo "this is secound job abd 4th step"
             - name: Github Actions Learning
