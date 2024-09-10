@@ -1,0 +1,10 @@
+name: 01-building-blocks
+
+on: push
+
+jobs:
+    first-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: first step
+              run: echo "hello arun , great you have create GitHub ACtions workflow, nema, trigger, job and first step"
