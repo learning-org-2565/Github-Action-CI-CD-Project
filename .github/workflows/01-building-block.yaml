@@ -8,3 +8,6 @@ jobs:
         steps:
             - name: first step
               run: echo "hello arun , great you have create GitHub ACtions workflow, nema, trigger, job and first step"
+        
+            - name: secound step
+              run: echo "running 2nd step to test my understanding"
