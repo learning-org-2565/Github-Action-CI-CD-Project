@@ -11,3 +11,10 @@ jobs:
         
             - name: secound step
               run: echo "running 2nd step to test my understanding"
+    secound-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: 3rd step
+              run: echo "this is secound job and 3rd step"
+            - name: 4th step
+              run: echo "this is secound job abd 4th step"
