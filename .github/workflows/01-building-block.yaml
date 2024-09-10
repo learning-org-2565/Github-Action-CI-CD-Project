@@ -18,3 +18,5 @@ jobs:
               run: echo "this is secound job and 3rd step"
             - name: 4th step
               run: echo "this is secound job abd 4th step"
+            - name: Github Actions Learning
+              run: echo " Learn how to trigger and write the simple code"
