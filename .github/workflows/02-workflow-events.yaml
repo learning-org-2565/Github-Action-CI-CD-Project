@@ -1,7 +1,6 @@
-name: 02 - Workflow Events
+name: 02 - Workflow Events # name of the workflow 
 
 on: 
-  push:
   pull_request:
   workflow_dispatch:
   pull_request_review:
@@ -15,7 +14,7 @@ jobs:
               run: echo "testing"
             - name: event name
               run: |
-                echo "Event name ${{ github.event_name }}"
+                echo "Event name ${{ github.event_name }}" 
 
 
 
