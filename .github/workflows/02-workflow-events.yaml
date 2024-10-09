@@ -13,6 +13,11 @@ jobs:
         steps:
             - name: show the trigger
               run: echo "testing"
+        steps:
+            - name: event name
+              run: |
+                echo "Event name ${{ github.event_name }}"
+
 
 
 
