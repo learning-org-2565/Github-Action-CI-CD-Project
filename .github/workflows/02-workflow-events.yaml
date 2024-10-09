@@ -1,4 +1,4 @@
-name: 02 - Workflow Events # name of the workflow
+name: 02 - Workflow Events # name of the workflowS
 
 on: 
   pull_request:
