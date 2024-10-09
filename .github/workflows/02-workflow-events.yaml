@@ -1,4 +1,4 @@
-name: 02 - Workflow Events
+name: 02 - Workflow Events 
 
 on: 
   push:
@@ -15,7 +15,7 @@ jobs:
               run: echo "testing"
             - name: event name
               run: |
-                echo "Event name ${{ github.event_name }}"
+                echo "Event name ${{ github.event_name }}" 
 
 
 
