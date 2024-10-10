@@ -21,4 +21,4 @@ jobs:
 
             - name: show OS
               shell: bash
-              run: echo "this job is running under wondows runners ${{github.RUNNER_OS}}"
+              run: echo "this job is running under wondows runners $github.RUNNER_OS"
