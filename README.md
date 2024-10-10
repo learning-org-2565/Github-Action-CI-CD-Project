@@ -8,5 +8,5 @@ git add . && git commit -m "created new branch to test PR EVENT  " && git push o
 
 To create branch
 git checkout -b <branch name>
-To switch to the branch 
+To switch to the branch  
 git checkout <branch name>
