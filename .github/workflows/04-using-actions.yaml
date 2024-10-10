@@ -1,0 +1,14 @@
+name: Actions for reatnodejs
+
+on:
+    push: 
+    workflow_dispatch: 
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout the code
+              run: ../react-app
+            - name: Printing Folders
+              run: echo "../react-app"
+             
