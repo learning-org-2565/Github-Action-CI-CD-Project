@@ -2,6 +2,7 @@ name: Talks about Runners
 
 on:
     workflow_dispatch:
+    push: 
 
 jobs:
     ubuntu-echo:
@@ -10,7 +11,9 @@ jobs:
 
         steps:
         - name: show OS
-          run: echo "this job is running under ubuntu machine runner ${{github.RUNNER_OS}}" 
+          run: 
+            echo "this job is running under ubuntu machine runner"
+            echo " this mrunner name is $RUNNER_OS" 
 
 
     windows-echo:
@@ -21,4 +24,6 @@ jobs:
 
             - name: show OS
               shell: bash
-              run: echo "this job is running under wondows runners $github.RUNNER_OS"
+              run: |
+                echo "this job is running under wondows runners "
+                echo " this mrunner name is $RUNNER_OS"
