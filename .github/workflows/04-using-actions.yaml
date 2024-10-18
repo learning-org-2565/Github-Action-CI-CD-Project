@@ -8,7 +8,9 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: checkout the code
-              run: ../react-app
-            - name: Printing Folders
-              run: echo "../react-app"
+              run: actions/checkout@v4
+            - name: printing the folders
+              run: ls
+
+            
              

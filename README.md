@@ -10,3 +10,7 @@ To create branch
 git checkout -b <branch name>
 To switch to the branch  
 git checkout <branch name>
+
+npm run start #to test NPM is working or not
+
+By defualt source code of repo is not available for the workflow for that we need to add a step called checkout.
