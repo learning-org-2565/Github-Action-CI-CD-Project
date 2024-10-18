@@ -15,7 +15,7 @@ jobs:
             - name: printing the folders
               run: ls
             - name: print the user name
-              run: echo " this was executed by ${{ github.actor }}
+              run: echo " this was executed by ${{ github.actor }} "
             - name: setup the node
               uses: actions/setup-node@v3
               with:
