@@ -14,3 +14,5 @@ git checkout <branch name>
 npm run start #to test NPM is working or not
 
 By defualt source code of repo is not available for the workflow for that we need to add a step called checkout.
+
+Added event trigger code whenver we raise new pr with main branch then only actions will trigger.
