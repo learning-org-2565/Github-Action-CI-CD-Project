@@ -1,7 +1,7 @@
 name: Actions for reatnodejs
 
 on:
-    push: 
+    # push: 
     workflow_dispatch: 
 jobs:
     build:

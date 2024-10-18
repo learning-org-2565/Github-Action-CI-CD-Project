@@ -2,7 +2,7 @@ name: Talks about Runners
 
 on:
     workflow_dispatch:
-    push: 
+    # push: 
 
 jobs:
     ubuntu-echo:
