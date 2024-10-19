@@ -1,0 +1,26 @@
+name: 06-Contexts
+
+on:
+    pull_request: 
+        types: 
+            - opened
+            - synchronize
+    workflow_dispatch: 
+    push: 
+    
+
+jobs:
+    echo-data:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: checkout the code
+              run: actions/checkout@v4
+            - name: Display Information
+              run: |
+                echo "Event name: ${{github.Event}}"
+                echo "Ref: ${{github.ref}}"
+                echo "SHA: ${{github.sha}}"
+                echo "Actor: ${{github.actor}} , ActorID: ${{github.actor_id}} "
+                echo "workflow: ${{github.workflow}}, ${{github.workflow_sha}}"
+                echo "RunID ${{github.run_id}} , ${{github.run_number}}"
