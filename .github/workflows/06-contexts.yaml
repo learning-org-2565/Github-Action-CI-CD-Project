@@ -24,3 +24,5 @@ jobs:
                 echo "Actor: ${{github.actor}} , ActorID: ${{github.actor_id}} "
                 echo "workflow: ${{github.workflow}}, ${{github.workflow_sha}}"
                 echo "RunID ${{github.run_id}} , ${{github.run_number}}"
+            - name: repo var name
+              run: echo "The value of myrepovar is ${{ vars.MYREPOVAR }}"
