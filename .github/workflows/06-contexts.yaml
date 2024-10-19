@@ -1,5 +1,5 @@
 name: 06-Contexts
-
+run-name: echo" my custom run workflow name is - $RUNNER_OS
 on:
     pull_request: 
         types: 
@@ -12,6 +12,7 @@ on:
 jobs:
     echo-data:
         runs-on: ubuntu-latest
+        
 
         steps:
             - name: checkout the code
@@ -24,3 +25,4 @@ jobs:
                 echo "Actor: ${{github.actor}} , ActorID: ${{github.actor_id}} "
                 echo "workflow: ${{github.workflow}}, ${{github.workflow_sha}}"
                 echo "RunID ${{github.run_id}} , ${{github.run_number}}"
+            
