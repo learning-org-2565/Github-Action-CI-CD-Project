@@ -1,5 +1,5 @@
 name: 06-Contexts
-run-name: my custom run workflow name is - $RUNNER_OS ${{runner.os}}
+run-name: my custom run workflow name is - $RUNNER_OS
 on:
     pull_request: 
         types: 
