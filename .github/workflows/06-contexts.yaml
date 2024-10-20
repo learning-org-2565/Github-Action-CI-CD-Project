@@ -48,5 +48,5 @@ jobs:
         steps:
           - name: Priting env vars
             run: |
-                echo "printing envs: $env.workflow_env"
-                echo "printing job vars: $env.job_lavel_env_var"
+                echo "printing envs: ${{env.workflow_env}}"
+                echo "printing job vars: ${{env.job_lavel_env_var}}"

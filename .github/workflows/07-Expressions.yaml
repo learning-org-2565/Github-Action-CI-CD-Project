@@ -1,0 +1,30 @@
+name: 07-using Expressions
+
+on:
+    push: 
+    workflow_dispatch: 
+        inputs:
+            debug:
+                type: 
+                    boolean
+    pull_request: 
+        branches: 
+            main
+jobs:
+    echo:
+        runs-on: ubuntu-latest
+        steps:
+            - name: debug, print start-up data
+              if: ${{github.event_name}} == 'push'
+              run: |
+                echo "Triggered by ${{github.event_name}}"
+                echo "Branch : ${{github.ref}}"
+                echo " Runner : ${{runner}}"
+                echo " Ruuner OS: $RUNNER_OS"
+            - name: Debug , Print when triggered from main
+              if: ${{inputs.debug}} && 'true' == 'main'
+              run: |
+                echo "I was triggered from main branch"
+            - name: Greetings
+              run: echo "Hellow World"
+    
