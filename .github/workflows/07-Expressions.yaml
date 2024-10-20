@@ -22,7 +22,7 @@ jobs:
                 echo " Runner : ${{runner}}"
                 echo " Ruuner OS: $RUNNER_OS"
             - name: Debug , Print when triggered from main
-              if: ${{inputs.debug}} && 'true' == 'main'
+              if: ${{inputs.debug}} && 'false' == 'main'
               run: |
                 echo "I was triggered from main branch"
             - name: Greetings
