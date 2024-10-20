@@ -8,8 +8,11 @@ on:
                 type: 
                     boolean
             env: 
-                default:
+                default: |
+                    'dev'
+                    'uat'
                 description: mention the env name 
+                
     pull_request: 
         branches: 
             main
