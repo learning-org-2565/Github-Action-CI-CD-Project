@@ -9,8 +9,8 @@ on:
                     boolean
             env: 
                 default: |
-                    'dev'
-                    'uat'
+                   - 'dev'
+                   - 'uat'
                 description: mention the env name 
                 
     pull_request: 
