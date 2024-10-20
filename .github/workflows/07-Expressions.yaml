@@ -7,6 +7,9 @@ on:
             debug:
                 type: 
                     boolean
+            env: 
+                default:
+                description: mention the env name 
     pull_request: 
         branches: 
             main
