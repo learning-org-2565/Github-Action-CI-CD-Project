@@ -7,11 +7,18 @@ on:
             - synchronize
     workflow_dispatch: 
     # push: 
-    
+
+env: 
+    workflow_env-var: " workflow enviroment variable"
+    workflow_overritten_var: "2nd env variable"
+
 
 jobs:
     echo-data:
         runs-on: ubuntu-latest
+        env:
+            job_lavel_env_var: "job lavel env variable"
+            job_lavel_env_var2: "2nd env variable"
         
 
         steps:
@@ -27,3 +34,10 @@ jobs:
                 echo "RunID ${{github.run_id}} , ${{github.run_number}}"
             - name: repo var name
               run: echo "The value of myrepovar is ${{ vars.MYREPOVAR }}"
+
+            - name: calling env vars
+              run: |
+                echo "Calling workflow env variable 1: ${{vars.workflow_env}}"
+                echo " Calling 2nd env var 2: ${{vars.workflow_overritten_var}}"
+                echo " Calling job lavel env: ${{vars.job_lavel_env_var}}"
+                echo " Calling 2nd job vars: ${{vars.job_lavel_env_var2}}"
