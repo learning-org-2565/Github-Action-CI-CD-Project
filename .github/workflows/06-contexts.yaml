@@ -1,5 +1,5 @@
 name: 06-Contexts
-run-name: my custom run workflow name is - $RUNNER_OS
+
 on:
     pull_request: 
         types: 
@@ -8,7 +8,8 @@ on:
     workflow_dispatch: 
     # push: 
 
-env: 
+env:
+
     workflow_env-var: " workflow enviroment variable"
     workflow_overritten_var: "2nd env variable"
 
@@ -40,4 +41,12 @@ jobs:
                 echo "Calling workflow env variable 1: ${{env.workflow_env}}"
                 echo " Calling 2nd env var 2: ${{env.workflow_overritten_var}}"
                 echo " Calling job lavel env: ${{env.job_lavel_env_var}}"
-                echo " Calling 2nd job vars: ${{env.job_lavel_env_var2}}"
+                echo " Calling 2nd job vars: ${{env.job_lavel_env_var2}}"\
+
+    echo-data2:
+        runs-on: ubuntu-latest
+        steps:
+          - name: Priting env vars
+            run: |
+                echo "printing envs: $env.workflow_env"
+                echo "printing job vars: $env.job_lavel_env_var"
