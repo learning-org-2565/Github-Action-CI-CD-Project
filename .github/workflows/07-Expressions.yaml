@@ -33,7 +33,7 @@ jobs:
               run: |
                 echo "I was triggered from main branch"
             - name: This will not execute if trigger Push event
-              if : ${{github.event_name != 'push' && github.event_name == 'pull_request' || 'workflow_dispatch'}}
+              if : ${{ github.event_name != 'push' && github.event_name == 'pull_request' || github.event_name =='workflow_dispatch' }}
               run: echo "Hellow World"
             - name: This will not execute if trigger Push event2
               if: ${{ github.event_name != 'push' && (github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch') }}
