@@ -9,8 +9,15 @@ on:
                     boolean
                 default: false
             env: 
-                default: 
-                description: mention the env name 
+                description: 'Select the environement'
+                options:
+                    - dev
+                    - uat
+                    - prod
+                default: 'dev'
+                required: true
+                type: choice
+                
             
                 
     pull_request: 
