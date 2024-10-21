@@ -1,7 +1,7 @@
 name: 07-using Expressions
 
 on:
-    push: 
+    #push: 
     workflow_dispatch: 
         inputs:
             debug:
@@ -45,4 +45,28 @@ jobs:
             - name: This will not execute if trigger Push event2
               if: ${{ github.event_name != 'push' && (github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch') }}
               run: echo "Hello World ${{github.event_name}}"
+
+            - name: select the env
+              run: |
+                echo "Environment: ${{github.event.inputs.env}}"
+                if: ${{github.event.inputs.env == 'dev'}}, then 
+                  echo "This is dev env"
+                elif: ${{github.event.inputs.env == 'uat'}}, then
+                  echo " this is uat env"
+                else: ${{github.event.inputs.env == 'prod'}}
+                  echo " this is prod env"
+
+            
+            - name: Set environment
+              run: |
+                 echo "Environment: ${{ github.event.inputs.env }}"
+                 if [ "${{ github.event.inputs.env }}" == "dev" ]; then
+                   echo "This is dev env"
+                 elif [ "${{ github.event.inputs.env }}" == "uat" ]; then
+                   echo "This is uat env"
+                 elif [ "${{ github.event.inputs.env }}" == "prod" ]; then
+                   echo "This is prod env"
+                 else
+                   echo "Unknown environment"
+                 fi
     
