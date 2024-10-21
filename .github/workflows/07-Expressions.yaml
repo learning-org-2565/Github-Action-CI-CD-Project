@@ -7,10 +7,11 @@ on:
             debug:
                 type: 
                     boolean
+                default: false
             env: 
                 default: 
-                  
                 description: mention the env name 
+                options:
                 
     pull_request: 
         branches: 
@@ -27,7 +28,7 @@ jobs:
                 echo " Runner : ${{runner}}"
                 echo " Ruuner OS: $RUNNER_OS"
             - name: Debug , Print when triggered from main
-              if: ${{inputs.debug}} && 'false' == 'main'
+              if: ${{inputs.debug}} 
               run: |
                 echo "I was triggered from main branch"
             - name: Greetings
