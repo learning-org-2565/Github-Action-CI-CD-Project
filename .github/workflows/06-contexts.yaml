@@ -10,7 +10,7 @@ on:
 
 env:
 
-    workflow_env-var: " workflow enviroment variable"
+    workflow_env_var: " workflow enviroment variable"
     workflow_overritten_var: "2nd env variable"
 
 
@@ -38,11 +38,11 @@ jobs:
 
             - name: calling env vars
               run: |
-                echo "Calling workflow env variable 1: ${{github.env.workflow_env}}"
+                echo "Calling workflow env variable 1: ${{github.env.workflow_env_var}}"
                 echo " Calling 2nd env var 2: ${{env.workflow_overritten_var}}"
                 echo " Calling job lavel env: ${{env.job_lavel_env_var}}"
                 echo " Calling 2nd job vars: ${{env.job_lavel_env_var2}}"
-                 echo " Calling 3nd job vars: ${{github.env.job_lavel_env_var2}}"
+                 echo " Calling 3nd job vars: ${{github.job.env.job_lavel_env_var2}}"
 
 
     echo-data2:
