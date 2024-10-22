@@ -71,5 +71,5 @@ jobs:
                    echo "This is prod env"
                  else
                    echo "Unknown environment"
-                 fi
+                 fi 
     
