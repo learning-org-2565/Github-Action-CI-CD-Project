@@ -49,7 +49,7 @@ jobs:
             - name: select the env
               run: |
                 echo "Environment: ${{ github.event.inputs.env }}"
-                if [ "${{ github.event.inputs.env }}" == "dev" ]; then
+                if [ "${{ github.event.inputs.env }}" == "dev" ]; then 
                   echo "This is dev env"
                 elif [ "${{github.event.inputs.env}}" == "uat" ]; then
                   echo " this is uat env"
