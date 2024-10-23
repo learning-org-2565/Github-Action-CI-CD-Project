@@ -29,7 +29,15 @@ jobs:
                 echo "Overritten: ${{env.OVERWRITTEN}}"
             - name: 'Overwrite Job Variable'
               env:
-                OVERWRITTEN: 'I have been overrriten at step level'
+                OVERWRITTEN: 'I  have been overrriten at step level'
               run: 
                 echo "step env var ${{env.OVERWRITTEN}}"
+
+    echo2:
+        runs-on: ubuntu-lates
+        steps:
+          - name: print the env
+            run: |
+              echo 'orga var: ${{vars.ORG_VAR}}'
+              echo 'Overritten vars: ${{vars.OVERRITTEN_VAR}}'             
         
