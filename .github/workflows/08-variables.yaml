@@ -39,5 +39,16 @@ jobs:
           - name: print the env
             run: |
               echo 'orga var: ${{vars.ORG_VAR}}'
-              echo 'Overritten vars: ${{vars.OVERRITTEN_VAR}}'             
+              echo 'Overritten vars: ${{vars.OVERRITTEN_VAR}}'   
+              echo 'Repository vars: ${{vars.REPOSITORY_VAR}}'      
+    echo3:
+        runs-on: ubuntu-latest
+        environment: prod
+        steps:
+          - name: print prod variables
+            run: |
+              echo 'orga var: ${{vars.ORG_VAR}}'
+              echo 'Overritten vars: ${{vars.OVERRITTEN_VAR}}'   
+              echo 'Repository vars: ${{vars.REPOSITORY_VAR}}' 
+              echo 'Envorment vars: ${{vars.PROD_VAR}}'
         
