@@ -34,7 +34,7 @@ jobs:
                 echo "step env var ${{env.OVERWRITTEN}}"
 
     echo2:
-        runs-on: ubuntu-lates
+        runs-on: ubuntu-latest
         steps:
           - name: print the env
             run: |
