@@ -50,5 +50,5 @@ jobs:
               echo 'orga var: ${{vars.ORG_VAR}}'
               echo 'Overritten vars: ${{vars.OVERRITTEN_VAR}}'   
               echo 'Repository vars: ${{vars.REPOSITORY_VAR}}' 
-              echo 'Envorment vars: ${{vars.PROD_VAR}}'
+              echo 'Envorment vars: ${{vars.PROD_VAR}}'   
         
