@@ -3,6 +3,16 @@ name: 08-using variable
 on:
     push: 
     workflow_dispatch: 
+      inputs:
+        environment:
+          default: "enter the env"
+          required: true
+          options:
+            - dev
+            - uat
+            - prd
+
+          
 
 env: 
     
@@ -50,5 +60,8 @@ jobs:
               echo 'orga var: ${{vars.ORG_VAR}}'
               echo 'Overritten vars: ${{vars.OVERRITTEN_VAR}}'   
               echo 'Repository vars: ${{vars.REPOSITORY_VAR}}' 
-              echo 'Envorment vars: ${{vars.PROD_VAR}}'   
+              echo 'Envorment vars: ${{vars.PROD_VAR}}'  
+          - name: Print environment
+            run: |
+              echo "Environment selected: ${{ github.event.inputs.environment }}" 
         
