@@ -6,6 +6,8 @@ on:
       inputs:
         environment:
           default: "enter the env"
+          type: 
+            choice
           required: true
           options:
             - dev
