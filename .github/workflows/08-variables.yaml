@@ -68,8 +68,9 @@ jobs:
               echo "Environment selected: ${{ github.event.inputs.environment }}" 
           - name: Apply env
             run: |
-              if  ['${{github.event.inputs.environment}}' == 'dev']  ; then 
+              if  ['${{github.event.inputs.environment}}' == 'dev']  ; then
               echo 'Currently you are working on Dev env , you can make your hands dirty here'
+              fi
             
 
         
