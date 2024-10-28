@@ -39,18 +39,12 @@ Created new Org , under that we have forked repo in the github
 ## [Functions in the github actions]:
 - ### Question 1. What exactly the functions is in github actions?
 
-**1**. Functions are predefined commands those we use to perform specific tasks and retrun the values
+1. Functions are predefined commands those we use to perform specific tasks and retrun the values
 
-**2**. These functions we can use for string modifications, automate decisions based on conditions ,check status , workflow variables of a job etc.
+2. These functions we can use for string modifications, automate decisions based on conditions ,check status , workflow variables of a job etc.
 
 3. Functions are written in the ${{...}} format or syntax
 
-2. Why does they so imp? do we have any usecases to understad. 
-3. I see few keywords those act like a functions like cancelled , containes
+- ### 2. Why does they so imp? do we have any usecases to understad. 
 
-
-What exactly the functions is in github actions?
-
-
-Why Are Functions Important?
-1. For decision making based on conditions check.error handling using few commands like cancelled() , failure()
+- ### 3. I see few keywords those act like a functions like cancelled , containes
