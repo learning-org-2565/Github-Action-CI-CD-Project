@@ -37,7 +37,8 @@ Created new Org , under that we have forked repo in the github
 
 ============
 ## [Functions in the github actions]:
-- **Question 1. What exactly the functions is in github actions?**
+- ### Question 1. What exactly the functions is in github actions?
+
 **1**. Functions are predefined commands those we use to perform specific tasks and retrun the values
 **2**. These functions we can use for string modifications, automate decisions based on conditions ,check status , workflow variables of a job etc.
 **3**. Functions are written in the ${{...}} format or syntax
