@@ -33,6 +33,6 @@ jobs:
         steps:
             - name: testing env condition
               if: env.RUN_step == 'true'
-              run: execute for RUN env step
+              run: echo 'execute for RUN env step'
 
             
