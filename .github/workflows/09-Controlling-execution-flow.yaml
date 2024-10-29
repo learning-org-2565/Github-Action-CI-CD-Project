@@ -29,10 +29,10 @@ jobs:
     pre-prod:
         runs-on: ubuntu-latest
         env:
-            RUN.step: 'true'
+            RUN_step: 'true'
         steps:
             - name: testing env condition
-              if: env.RUN.step == 'true'
+              if: env.RUN_step == 'true'
               run: execute for RUN env step
-              
+
             
