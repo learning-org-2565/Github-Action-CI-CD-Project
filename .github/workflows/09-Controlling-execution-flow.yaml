@@ -21,7 +21,7 @@ jobs:
     prod:
         runs-on: ubuntu-latest
         needs: test
-        if: failure()
+        if: success()
         steps: 
             - name: live traffic for users
               run: echo "live traffic for customers"
@@ -37,7 +37,7 @@ jobs:
     post-prod:
         runs-on: ubuntu-latest
         needs: prod
-        if: failure()
+        if: success()
         steps:
             - name: if prod failes
               run: echo "Ruuning this becuase prod job failing"
