@@ -34,5 +34,12 @@ jobs:
             - name: testing env condition
               if: env.RUN_step == 'true'
               run: echo 'execute for RUN env step'
+    post-prod:
+        runs-on: ubuntu-latest
+        needs: prod
+        if: failure()
+        steps:
+            - name: if prod failes
+              run: echo "Ruuning this becuase prod job failing"
 
             
