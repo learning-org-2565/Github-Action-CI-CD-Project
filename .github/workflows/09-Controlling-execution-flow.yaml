@@ -11,7 +11,7 @@ jobs:
     
         steps:
             - name: checkout
-              uses: actions/checkout@v4
+              uses: actions/checkout@v3
             - name: building application
               if: github.action_ref == 'ref/hands/main'
               run: echo "Build state where developers works."
