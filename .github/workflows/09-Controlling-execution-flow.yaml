@@ -7,7 +7,11 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
+
+    
         steps:
+            - name: checkout
+              uses: actions/checkout@v4
             - name: building application
               if: github.action_ref == 'ref/hands/main'
               run: echo "Build state where developers works."
