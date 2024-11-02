@@ -8,12 +8,13 @@ on:
     
 jobs:
     lint-build:
-        runs-on: linux-latest
+        runs-on: ubuntu-latest
+        
         steps:
             - name: Building the code 
               run: echo "running the code to make artifacts"
     lint-unit-test:
-        runs-on: linux-latest
+        runs-on: ubuntu-latest
         needs: lint-build
         steps:
            
@@ -21,13 +22,13 @@ jobs:
               run: |
                 echo " Executing Unit tests"
     e2e-pre-prod:
-        runs-on: linux-latest
+        runs-on: ubuntu-latest
         needs: lint-unit-test
         steps:
             - name: Running on pre-prod
               run: echo "If pre-prod success then move to PROD" 
     prod:
-        runs-on: linux-latest
+        runs-on: ubuntu-latest
         needs: e2e-pre-prod
         steps:
             - name: deploying in the prod
