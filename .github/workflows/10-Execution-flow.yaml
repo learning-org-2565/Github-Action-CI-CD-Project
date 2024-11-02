@@ -1,8 +1,14 @@
 name: 10-Execution-flow
 on:
 
-    push:
+    
     workflow_dispatch:
+        inputs:
+            pass-unut-test:
+                type: boolean
+                description: wheather untu test will pass or not
+                default: true
+                
         
                 
     
@@ -21,6 +27,8 @@ jobs:
             - name: "Running Unit Tests"
               run: |
                 echo " Executing Unit tests"
+            - name: fail unit test
+              run: ${{!inputs.pass-unut-test}}
     e2e-pre-prod:
         runs-on: ubuntu-latest
         needs: lint-unit-test
