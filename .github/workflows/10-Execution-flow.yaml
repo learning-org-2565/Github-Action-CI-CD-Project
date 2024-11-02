@@ -7,7 +7,7 @@ on:
             pass-unut-test:
                 type: boolean
                 description: wheather untu test will pass or not
-                default: true
+                default: false
                 
         
                 

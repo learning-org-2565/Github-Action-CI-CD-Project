@@ -1,7 +1,7 @@
 name: 09-Controll flow execution
 
 on:
-    push: 
+    
     workflow_dispatch: 
 
 jobs:
