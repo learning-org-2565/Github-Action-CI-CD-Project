@@ -1,9 +1,9 @@
-10-Execution-flow
+name: 10-Execution-flow
 on:
+
     push:
     workflow_dispatch:
-        inputs:
-            lint-unit-test:
+        
                 
     
 jobs:
@@ -14,16 +14,24 @@ jobs:
               run: echo "running the code to make artifacts"
     lint-unit-test:
         runs-on: linux-latest
+        needs: lint-build
         steps:
-            - name: Running Unit Tests
-              needs: lint-build
-              run: echo " Executing Unit tests"
+           
+            - name: "Running Unit Tests"
+              run: |
+                echo " Executing Unit tests"
     e2e-pre-prod:
         runs-on: linux-latest
+        needs: lint-unit-test
         steps:
             - name: Running on pre-prod
-              needs: lint-unit-test
               run: echo "If pre-prod success then move to PROD" 
+    prod:
+        runs-on: linux-latest
+        needs: e2e-pre-prod
+        steps:
+            - name: deploying in the prod
+              run: echo "deploying in the prod"
             
             
               
