@@ -10,7 +10,7 @@ on:
                     - dev
                     - uat
                     - prod
-                default: dev
+                default: non
                 type: choice
             secrets:
                 description: Secrets for the env
@@ -20,7 +20,14 @@ jobs:
     inputs-job:
         runs-on: ubuntu-latest
         steps:
+            - name: Checkout code
+              run: actions/checkout@v3
+        
             - name: Deploying in the env
+              env:
+                  environement: 'prod'
               run: echo "Deploying in ${{inputs.environement}}"
+        
+                    
             - name: Using secrets
               run: echo "secrets are ${{inputs.secrets}}"
