@@ -16,18 +16,41 @@ on:
                 description: Secrets for the env
                 required: true
                 default: aws
+            notify:
+                description: after deployment send the notification
+                default: none
+                options:
+                  - true
+                  - false
+                type: choice
+                required: true
 jobs:
     inputs-job:
         runs-on: ubuntu-latest
         steps:
-            - name: Checkout code
-              run: actions/checkout@v3
         
             - name: Deploying in the env
-              env:
-                  environement: 'prod'
-              run: echo "Deploying in ${{inputs.environement}}"
-        
+             
+              run: |
+                echo "Deploying in ${{github.event.inputs.environement}}"
+                echo "deploying in env only inputs.env, not adding github and events: ${{inputs.environement}}"
                     
             - name: Using secrets
               run: echo "secrets are ${{inputs.secrets}}"
+            - name: Deploying in the Dev env
+              if: ${{github.event.inputs.environement == 'dev'}}
+              run: echo " Application running in the dev env"
+            - name: Deploying in the UAT
+              if: ${{github.event.inputs.environement == 'uat'}}
+              run: echo "Source code running on the UAT env"
+            - name: Deploying in the prod env
+              if: ${{github.event.inputs.environement == 'prod'}}
+              run: |
+                echo "we are deploying in the application in prod env"
+            - name: prod
+              if: ${{inputs.environement == 'prod'}}
+              run: echo 'only inputs and env, not adding github, events'
+            - name: notify
+              if: ${{github.event.inputs.notify == 'true'}}
+              run: echo "notifing deployment completed "
+
