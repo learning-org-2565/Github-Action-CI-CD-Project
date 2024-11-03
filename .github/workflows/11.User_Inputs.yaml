@@ -1,0 +1,26 @@
+name: 11.user inputs in workflow dispatch
+
+on:
+    workflow_dispatch: 
+        inputs:
+            environement:
+                description: Choose the env to deploy
+                required: false
+                options:
+                    - dev
+                    - uat
+                    - prod
+                default: dev
+                type: choice
+            secrets:
+                description: Secrets for the env
+                required: true
+                default: aws
+jobs:
+    inputs-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Deploying in the env
+              run: echo "Deploying in ${{inputs.environement}}"
+            - name: Using secrets
+              run: echo "secrets are ${{inputs.secrets}}"
