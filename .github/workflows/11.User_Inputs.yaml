@@ -24,9 +24,14 @@ on:
                   - false
                 type: choice
                 required: true
+            target: 
+                type: environment
+                required: true
+                description: in which env we deploy
 jobs:
     inputs-job:
         runs-on: ubuntu-latest
+        environment: ${{inputs.environement}}
         steps:
         
             - name: Deploying in the env
