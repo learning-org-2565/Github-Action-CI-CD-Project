@@ -1,0 +1,20 @@
+name: 12-Output Example Workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step to calculate an output
+        id: calculate
+        run: echo "value=Hello, World!" >> $GITHUB_ENV
+
+      - name: Set output
+        id: set-output
+        run: echo "result=42" >> $GITHUB_ENV
+        env:
+          MY_VARIABLE: ${{ steps.calculate.outputs.value }}
+
+      - name: Use the output in another step
+        run: echo "The result is ${{ steps.set-output.outputs.result }}"
