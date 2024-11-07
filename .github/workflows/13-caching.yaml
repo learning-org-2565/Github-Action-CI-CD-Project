@@ -1,0 +1,40 @@
+name: 13-caching the dependencies
+
+on:
+    push: 
+        branches: 
+            -main
+    workflow_dispatch: 
+        inputs:
+            use-caches:
+                description: wheather to run cache step
+                default: true
+                type: boolean
+
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        defaults:
+          
+            run:
+                working-directory: 13-caching/react-app
+        steps:
+            - name: checkout the code
+              uses: actions/checkout@v4
+            - name: Setup node
+              uses: actions/setup-node@v3
+              with:
+                node-version: "20.x" 
+            - name: Install Dependencies
+              run: npm ci
+            - name: Testing
+              run: npm run test
+            - name: Building
+              run: npm run build
+            - name: Deploying in Dev env
+              run: echo " Deploying in the dev env"
+        # checkout the code
+        # install the dependencies
+        # linting, formating, building
+        # deploying in non-prod 
