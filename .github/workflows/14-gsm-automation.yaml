@@ -1,9 +1,20 @@
-name: Secrets Automation to the GSM
+name: 14-gsm
 
 on:
-  push:
-    branches:
-      - main  # Run the workflow on pushes to the main branch
+
+  push: 
+  workflow_dispatch: 
+    inputs:
+      actions:
+        description: apply or destroy
+        options:
+          - apply
+          - destroy
+          - plan
+        default: plan
+        required: true
+        type: choice
+        
 
 jobs:
   terraform:
@@ -18,16 +29,13 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}  # GCP Project ID from GitHub Secrets
           install_components: 'beta'  # Install any additional components you need
 
-      - name: Authenticate to GCP project
+      - name: Authenticate to GCP
         uses: google-github-actions/auth@v0.4.0
         with:
-          credentials_json: '${{ secrets.GCP_CREDENTIALS }}'  # Service account key from GitHub 
+            credentials_json: ${{ secrets.GCP_CREDENTIALS }}
 
 
-      - name: Authenticate with GCP Service Account
-        run: |
-          gcloud auth activate-service-account --key-file="${{ secrets.GCP_CREDENTIALS }}"
-        shell: bash
+
 
       - name: Retrieve secret from Google Secret Manager
         id: retrieve_secret
